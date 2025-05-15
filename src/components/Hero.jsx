@@ -271,7 +271,7 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -280,7 +280,7 @@ const Hero = () => {
             Hi, my name is
           </motion.p>
 
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
@@ -306,48 +306,100 @@ const Hero = () => {
             />
           </div>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
             className="text-lightestText max-w-xl mx-auto mb-8 leading-relaxed"
           >
-            I'm a passionate software developer specializing in building exceptional digital experiences. 
+            I'm a passionate software developer specializing in building exceptional digital experiences.
             Currently pursuing B.Tech (IT) at Dharmsinh Desai University.
           </motion.p>
 
-          {/* <motion.div
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="flex justify-center gap-4"
+            className="flex flex-col items-center gap-6 mt-6"
           >
-            <a 
-              href="#contact" 
-              className="btn px-8 py-4 bg-gradient-to-r from-secondary/20 to-secondary/10 backdrop-blur-sm"
+            {/* Get In Touch Button */}
+            <a
+              href="#contact"
+              className="btn px-8 py-4 bg-gradient-to-r from-secondary/20 to-secondary/10 backdrop-blur-sm rounded-md text-white hover:shadow-lg transition"
             >
               Get In Touch
             </a>
-            
-            <div className="flex gap-4">
-              <a 
-                href="https://github.com/virpariyamalay" 
-                target="_blank" 
+
+            {/* <a
+  href="/Malay_Resume.pdf"
+  download
+  className="group inline-flex items-center justify-center px-8 py-4 rounded-lg border border-cyan-400 text-cyan-300 font-semibold tracking-wide bg-transparent hover:bg-cyan-500 hover:text-white hover:shadow-[0_0_10px_#22d3ee] transition-all duration-300 ease-in-out"
+>
+  <svg
+    className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:translate-y-1"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M12 12v8m0 0l-3-3m3 3l3-3M12 4v8"
+    />
+  </svg>
+  Download Resume
+</a> */}
+
+<a
+  href="/Malay_Resume.pdf"
+  download
+  className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-cyan-400 text-cyan-300 font-medium tracking-wide bg-transparent hover:bg-cyan-500 hover:text-white hover:shadow-[0_0_15px_#22d3ee] transition-all duration-300 ease-in-out"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={2}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 12v8m0 0l-3-3m3 3l3-3M12 4v8"
+    />
+  </svg>
+  <span>Download Resume</span>
+</a>
+
+
+            {/* Social Icons */}
+            <div className="flex gap-6">
+              <a
+                href="https://github.com/virpariyamalay"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-lightText hover:text-secondary transition-colors duration-300 text-2xl"
+                aria-label="GitHub"
               >
-                <FaGithub />
+                <button className="p-4 bg-darkBg rounded-full shadow-lg hover:shadow-secondary transition duration-300">
+                  <FaGithub className="text-lightText text-7xl" />
+                </button>
               </a>
-              <a 
-                href="https://www.linkedin.com/in/malay-virpariya-38417a278/" 
-                target="_blank" 
+
+              <a
+                href="https://www.linkedin.com/in/malay-virpariya-38417a278/"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-lightText hover:text-secondary transition-colors duration-300 text-2xl"
+                aria-label="LinkedIn"
               >
-                <FaLinkedin />
+                <button className="p-4 bg-darkBg rounded-full shadow-lg hover:shadow-secondary transition duration-300">
+                  <FaLinkedin className="text-lightText text-7xl" />
+                </button>
               </a>
             </div>
-          </motion.div> */}
+          </motion.div>
+
         </motion.div>
       </div>
     </section>
