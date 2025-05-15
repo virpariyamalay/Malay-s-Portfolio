@@ -34,8 +34,10 @@ const Contact = () => {
         toast.error('Failed to send message. Please try again.');
       }
     } catch (error) {
-      toast.error('An error occurred. Please try again later.');
-    } finally {
+  console.error('❌ Error sending email:', error);
+  res.status(500).json({ message: `Error sending email: ${error.message}`, stack: error.stack });
+}
+ finally {
       setIsSubmitting(false);
     }
   };
