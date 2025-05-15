@@ -76,7 +76,7 @@ const Navbar = () => {
   return (
     <nav className="fixed w-full h-20 bg-primary/90 backdrop-blur-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-secondary">MV.</h1>
+        <h1 className="text-2xl font-bold text-secondary">Malay Virpariya</h1>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8">

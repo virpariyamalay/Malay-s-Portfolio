@@ -260,12 +260,12 @@ const Hero = () => {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-              className="absolute w-36 h-36 rounded-full border-[3px] border-t-secondary border-b-transparent"
+              className="absolute w-64 h-64 rounded-full border-[3px] border-t-secondary border-b-transparent"
             />
             <motion.div
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-              className="w-32 h-32 rounded-full overflow-hidden ring-4 ring-secondary"
+              className="w-52 h-54 rounded-full overflow-hidden ring-4 ring-secondary"
             >
               <img src="/circleprofile.jpg" alt="Malay Virpariya" className="w-full h-full object-cover" />
             </motion.div>
@@ -330,26 +330,7 @@ const Hero = () => {
               Get In Touch
             </a>
 
-            {/* <a
-  href="/Malay_Resume.pdf"
-  download
-  className="group inline-flex items-center justify-center px-8 py-4 rounded-lg border border-cyan-400 text-cyan-300 font-semibold tracking-wide bg-transparent hover:bg-cyan-500 hover:text-white hover:shadow-[0_0_10px_#22d3ee] transition-all duration-300 ease-in-out"
->
-  <svg
-    className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:translate-y-1"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    viewBox="0 0 24 24"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M12 12v8m0 0l-3-3m3 3l3-3M12 4v8"
-    />
-  </svg>
-  Download Resume
-</a> */}
+           
 
 <a
   href="/Malay_Resume.pdf"
