@@ -235,6 +235,10 @@
 // };
 
 // export default Hero;
+
+
+
+///////////////////////////////////////////////////////////
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -256,7 +260,7 @@ const Hero = () => {
           className="text-center"
         >
           {/* Animated Profile Image with proper spacing */}
-          <div className="relative flex justify-center items-center mb-6">
+          <div className="relative flex justify-center items-center mb-6 mt-24">
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
@@ -275,7 +279,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-secondary font-mono mb-4"
+            className="text-secondary font-mono mb-4 mt-4"
           >
             Hi, my name is
           </motion.p>
