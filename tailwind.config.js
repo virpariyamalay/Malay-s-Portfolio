@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: 'class', 
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -13,6 +13,7 @@ export default {
         tertiary: "#112240",
         lightText: "#ccd6f6",
         lightestText: "#8892b0",
+        
       },
       animation: {
         'bounce-slow': 'bounce 3s linear infinite',

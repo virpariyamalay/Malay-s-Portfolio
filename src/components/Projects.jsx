@@ -32,7 +32,7 @@ const Projects = () => {
         { icon: SiMongodb, name: "MongoDB" }
       ],
       github: "https://github.com/virpariyamalay/Aashray-Metal-Bill-generator",
-      live: "ashraybill.vercel.app",
+      live: "https://aashraybill.vercel.app/",
       date: "02 2025"
     }
   ];
