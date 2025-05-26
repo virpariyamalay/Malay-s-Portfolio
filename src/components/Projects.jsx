@@ -31,8 +31,8 @@ const Projects = () => {
         { icon: SiNodedotjs, name: "Node.js" },
         { icon: SiMongodb, name: "MongoDB" }
       ],
-      github: "https://github.com/yourusername/aashray-metal",
-      live: "https://aashray-metal.com",
+      github: "https://github.com/virpariyamalay/Aashray-Metal-Bill-generator",
+      live: "ashraybill.vercel.app",
       date: "02 2025"
     }
   ];
