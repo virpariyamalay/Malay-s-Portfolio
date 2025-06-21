@@ -116,7 +116,6 @@
 // };
 
 // export default Experience;
-
 import { motion } from "framer-motion";
 import {
   FaReact, FaNodeJs, FaGitAlt, FaGithub, FaDatabase, FaJava, FaCode,
@@ -170,67 +169,70 @@ const skills = [
 
 const Experience = () => {
   return (
-    // <section id="experience" className="py-20 bg-[#1f1f2b]">
-    //   <motion.div
-    //     initial={{ opacity: 0, y: 20 }}
-    //     whileInView={{ opacity: 1, y: 0 }}
-    //     transition={{ duration: 0.6 }}
-    //     viewport={{ once: true }}
-    //   >
-    //     <h2 className="section-title text-4xl font-bold text-center text-primary mb-8">
-    //       Experience & Skills
-    //     </h2>
-
-    //     <div className="grid gap-12">
-    <section id="experience" className="py-20">
+    <section id="skills" className="py-20 px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
+        className="max-w-6xl mx-auto"
       >
-        <h2 className="section-title text-3xl font-bold text-center mb-8">Experience & Skills</h2>
+        <h2 className="section-title text-3xl sm:text-4xl font-bold text-center mb-12">
+          Education & Skills
+        </h2>
 
-        <div className="grid gap-8">
+        <div className="grid gap-12">
           {/* Education Section */}
-          <div className="bg-[#2a2a3a] p-8 rounded-lg shadow-lg">
-            <h3 className="text-3xl font-semibold mb-6 text-secondary">Education</h3>
-            <div className="space-y-8">
+          <div className="bg-[#2a2a3a] p-6 sm:p-8 rounded-lg shadow-lg">
+            <h3 className="text-2xl sm:text-3xl font-semibold mb-6 text-secondary">
+              Education
+            </h3>
+            <div className="space-y-6">
               {educationData.map((edu, index) => (
                 <motion.div
                   key={index}
-                  whileHover={{ scale: 1.05 }}
-                  className="flex items-center gap-6 bg-[#1a1a2e] p-5 rounded-xl border-2 border-[#383848] transition-all duration-300"
+                  whileHover={{ scale: 1.03 }}
+                  className="flex items-center gap-4 sm:gap-6 bg-[#1a1a2e] p-4 sm:p-5 rounded-xl border-2 border-[#383848] transition-all duration-300"
                 >
-                  <div className="text-5xl text-primary">{edu.icon}</div>
+                  <div className="text-3xl sm:text-5xl text-primary">
+                    {edu.icon}
+                  </div>
                   <div>
-                    <h4 className="text-xl font-bold text-accent">{edu.title}</h4>
-                    <p className="text-md text-lightestText">{edu.degree}</p>
-                    <p className="text-sm text-gray-400">{edu.duration} | {edu.location}</p>
+                    <h4 className="text-lg sm:text-xl font-bold text-accent">
+                      {edu.title}
+                    </h4>
+                    <p className="text-sm sm:text-base text-lightestText">{edu.degree}</p>
+                    <p className="text-xs sm:text-sm text-gray-400">{edu.duration} | {edu.location}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
           </div>
 
-          {/* Skills Sections */}
+          {/* Skills Section */}
           {skills.map((skillGroup, index) => (
-            <div key={index} className="bg-[#2a2a3a] p-8 rounded-lg shadow-lg">
-              <h3 className="text-3xl font-semibold mb-6 text-secondary">{skillGroup.category}</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+            <div key={index} className="bg-[#2a2a3a] p-6 sm:p-8 rounded-lg shadow-lg">
+              <h3 className="text-2xl sm:text-3xl font-semibold mb-6 text-secondary">
+                {skillGroup.category}
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
                 {skillGroup.items.map((skill, skillIndex) => (
                   <motion.div
                     key={skillIndex}
                     whileHover={{
                       scale: 1.05,
-                      boxShadow: "0px 4px 10px rgba(255, 255, 255, 0.3)",
+                      boxShadow: "0px 4px 12px rgba(255, 255, 255, 0.2)",
                       backgroundColor: "#333"
                     }}
-                    whileTap={{ scale: 0.98 }}
-                    className="flex flex-col items-center justify-center text-center bg-[#202040] p-6 rounded-2xl border-2 border-[#2e2e48] transition-all duration-300 hover:bg-[#2a2a3a] hover:border-[#444]"
+                    whileTap={{ scale: 0.97 }}
+                    className="flex flex-col items-center justify-center text-center bg-[#202040] p-5 sm:p-6 rounded-2xl border-2 border-[#2e2e48] transition-all duration-300 hover:bg-[#2a2a3a] hover:border-[#444]"
                   >
-                    <div className="text-5xl text-secondary">{techIcons[skill] || <FaCode />}</div>
-                    <span className="text-sm text-lightestText mt-3">{skill}</span>
+                    <div className="text-3xl sm:text-5xl text-secondary">
+                      {techIcons[skill] || <FaCode />}
+                    </div>
+                    <span className="text-xs sm:text-sm text-lightestText mt-3">
+                      {skill}
+                    </span>
                   </motion.div>
                 ))}
               </div>

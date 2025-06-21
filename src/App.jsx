@@ -9,7 +9,8 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="min-h-screen bg-primary">
+    // <div className="min-h-screen bg-primary">
+    <div>
   
 
       <Navbar />

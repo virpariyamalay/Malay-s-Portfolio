@@ -1,190 +1,442 @@
+// // import { useState, useEffect } from 'react';
+// // import { Link } from 'react-scroll';
+// // import { motion, AnimatePresence } from 'framer-motion';
+// // import { XMarkIcon } from '@heroicons/react/24/outline';
 
-// import { useState } from 'react'
-// import { Link } from 'react-scroll'
-// import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+// // const links = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
+
+// // const Navbar = () => {
+// //   const [menuOpen, setMenuOpen] = useState(false);
+// //   const [activeSection, setActiveSection] = useState('home');
+// //   const [scrollPercent, setScrollPercent] = useState(0);
+
+// //   useEffect(() => {
+// //     const handleScroll = () => {
+// //       const scrollTop = window.scrollY;
+// //       const winHeight = document.documentElement.scrollHeight - window.innerHeight;
+// //       const scrolled = (scrollTop / winHeight) * 100;
+// //       setScrollPercent(scrolled);
+// //     };
+// //     window.addEventListener('scroll', handleScroll);
+// //     return () => window.removeEventListener('scroll', handleScroll);
+// //   }, []);
+
+// //   useEffect(() => {
+// //     const handleScrollSpy = () => {
+// //       const scrollPosition = window.scrollY + 100;
+// //       const sectionIds = links.map((l) => l.toLowerCase());
+
+// //       for (let id of sectionIds) {
+// //         const section = document.getElementById(id);
+// //         if (section && section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
+// //           setActiveSection(id);
+// //           break;
+// //         }
+// //       }
+// //     };
+// //     window.addEventListener('scroll', handleScrollSpy);
+// //     return () => window.removeEventListener('scroll', handleScrollSpy);
+// //   }, []);
+
+// //   return (
+// //     <>
+// //       {/* Progress Bar Indicator */}
+// //       <div className="fixed top-4 right-4 z-[60]">
+// //         <div className="relative w-12 h-12">
+// //           <svg className="absolute top-0 left-0" width="48" height="48">
+// //             <circle
+// //               cx="24"
+// //               cy="24"
+// //               r="20"
+// //               stroke="#7c3aed"
+// //               strokeWidth="4"
+// //               fill="none"
+// //               strokeDasharray={126}
+// //               strokeDashoffset={126 - (scrollPercent * 126) / 100}
+// //               strokeLinecap="round"
+// //             />
+// //           </svg>
+// //           <div className="absolute inset-0 flex items-center justify-center text-xs font-semibold text-secondary">
+// //             {Math.round(scrollPercent)}%
+// //           </div>
+// //         </div>
+// //       </div>
+
+// //       {/* Top Navbar */}
+// //       <nav className="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md shadow-md">
+// //         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+// //           {/* Logo */}
+// //           <h1 className="text-lg sm:text-2xl font-semibold text-secondary">Malay Virpariya</h1>
+
+// //           {/* Desktop Links */}
+// //           <ul className="hidden md:flex items-center gap-8 text-lightText text-sm sm:text-base">
+// //             {links.map((name) => (
+// //               <li key={name}>
+// //                 <Link
+// //                   to={name.toLowerCase()}
+// //                   smooth={true}
+// //                   duration={500}
+// //                   offset={-80}
+// //                   className={`cursor-pointer transition duration-300 font-medium ${
+// //                     activeSection === name.toLowerCase()
+// //                       ? 'text-accent underline underline-offset-4'
+// //                       : 'hover:text-accent'
+// //                   }`}
+// //                 >
+// //                   {name}
+// //                 </Link>
+// //               </li>
+// //             ))}
+// //           </ul>
+
+// //           {/* Mobile Hamburger */}
+// //           <div className="md:hidden z-50">
+// //             <button
+// //               onClick={() => setMenuOpen(!menuOpen)}
+// //               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+// //               className="p-2 focus:outline-none"
+// //             >
+// //               {menuOpen ? (
+// //                 <XMarkIcon className="h-8 w-8 text-lightText" />
+// //               ) : (
+// //                 <div className="flex flex-col gap-1">
+// //                   <span className="w-6 h-0.5 bg-lightText rounded-sm" />
+// //                   <span className="w-6 h-0.5 bg-lightText rounded-sm" />
+// //                   <span className="w-6 h-0.5 bg-lightText rounded-sm" />
+// //                 </div>
+// //               )}
+// //             </button>
+// //           </div>
+// //         </div>
+// //       </nav>
+
+// //       {/* Mobile Slide Menu */}
+// //       <AnimatePresence>
+// //         {menuOpen && (
+// //           <motion.div
+// //             initial={{ y: '-100%' }}
+// //             animate={{ y: 0 }}
+// //             exit={{ y: '-100%' }}
+// //             transition={{ duration: 0.3, ease: 'easeInOut' }}
+// //             className="fixed top-0 left-0 w-full h-screen bg-primary text-lightText z-40 flex flex-col items-center justify-center gap-8 text-lg font-medium"
+// //           >
+// //             {links.map((name) => (
+// //               <Link
+// //                 key={name}
+// //                 to={name.toLowerCase()}
+// //                 smooth={true}
+// //                 duration={500}
+// //                 offset={-80}
+// //                 onClick={() => setMenuOpen(false)}
+// //                 className="hover:text-secondary transition duration-200"
+// //               >
+// //                 {name}
+// //               </Link>
+// //             ))}
+// //           </motion.div>
+// //         )}
+// //       </AnimatePresence>
+// //     </>
+// //   );
+// // };
+
+// // export default Navbar;
+// import { useState, useEffect } from 'react';
+// import { Link } from 'react-scroll';
+// import { motion, AnimatePresence } from 'framer-motion';
+// import { XMarkIcon } from '@heroicons/react/24/outline';
+
+// const links = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
 
 // const Navbar = () => {
-//   const [nav, setNav] = useState(false)
-//   const handleClick = () => setNav(!nav)
+//   const [menuOpen, setMenuOpen] = useState(false);
+//   const [activeSection, setActiveSection] = useState('home');
+//   const [scrollPercent, setScrollPercent] = useState(0);
 
-//   const links = [
-//     { name: 'Home', to: 'home' },
-//     { name: 'About', to: 'about' },
-//     { name: 'Experience', to: 'experience' },
-//     { name: 'Projects', to: 'projects' },
-//     { name: 'Contact', to: 'contact' },
-//   ]
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const scrollTop = window.scrollY;
+//       const winHeight = document.documentElement.scrollHeight - window.innerHeight;
+//       const scrolled = (scrollTop / winHeight) * 100;
+//       setScrollPercent(scrolled);
+//     };
+//     window.addEventListener('scroll', handleScroll);
+//     return () => window.removeEventListener('scroll', handleScroll);
+//   }, []);
+
+//   useEffect(() => {
+//     const handleScrollSpy = () => {
+//       const scrollPosition = window.scrollY + 100;
+//       const sectionIds = links.map((l) => l.toLowerCase());
+
+//       for (let id of sectionIds) {
+//         const section = document.getElementById(id);
+//         if (section && section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
+//           setActiveSection(id);
+//           break;
+//         }
+//       }
+//     };
+//     window.addEventListener('scroll', handleScrollSpy);
+//     return () => window.removeEventListener('scroll', handleScrollSpy);
+//   }, []);
 
 //   return (
-//     <nav className="fixed w-full h-20 bg-primary/90 backdrop-blur-sm z-50">
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
-//         <h1 className="text-2xl font-bold text-secondary">Malay Virpariya</h1>
-
-//         {/* Desktop Menu */}
-//         <ul className="hidden md:flex gap-8">
-//           {links.map(({ name, to }) => (
-//             <li key={name}>
-//               <Link to={to} smooth={true} duration={500} className="nav-link">
-//                 {name}
-//               </Link>
-//             </li>
-//           ))}
-//         </ul>
-
-//         {/* Mobile Menu Button */}
-//         <div className="md:hidden cursor-pointer" onClick={handleClick}>
-//           {nav ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
+//     <>
+//       {/* Scroll Progress Circle */}
+//       <div className="fixed top-4 right-4 z-[60]">
+//         <div className="relative w-12 h-12">
+//           <svg className="absolute top-0 left-0" width="48" height="48">
+//             <circle
+//               cx="24"
+//               cy="24"
+//               r="20"
+//               stroke="#7c3aed"
+//               strokeWidth="4"
+//               fill="none"
+//               strokeDasharray={126}
+//               strokeDashoffset={126 - (scrollPercent * 126) / 100}
+//               strokeLinecap="round"
+//             />
+//           </svg>
+//           <div className="absolute inset-0 flex items-center justify-center text-xs font-semibold text-secondary">
+//             {Math.round(scrollPercent)}%
+//           </div>
 //         </div>
+//       </div>
 
-//         {/* Mobile Menu */}
-//         <ul className={`${nav ? 'translate-x-0' : 'translate-x-full'} md:hidden fixed top-20 right-0 w-full h-[calc(100vh-5rem)] bg-primary flex flex-col justify-center items-center gap-8 transition-transform duration-300`}>
-//           {links.map(({ name, to }) => (
-//             <li key={name} className="text-2xl">
-//               <Link 
-//                 to={to} 
-//                 smooth={true} 
-//                 duration={500} 
-//                 className="nav-link"
-//                 onClick={handleClick}
+//       {/* Top Navbar */}
+//       <nav className="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md shadow-md">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+//           {/* Logo */}
+//           <h1 className="text-lg sm:text-2xl font-semibold text-secondary">Malay Virpariya</h1>
+
+//           {/* Desktop Links */}
+//           <ul className="hidden md:flex items-center gap-8 text-lightText text-sm sm:text-base">
+//             {links.map((name) => (
+//               <li key={name}>
+//                 <Link
+//                   to={name.toLowerCase()}
+//                   smooth={false}
+//                   duration={0}
+//                   offset={-80}
+//                   className={`cursor-pointer transition duration-300 font-medium ${
+//                     activeSection === name.toLowerCase()
+//                       ? 'text-accent underline underline-offset-4'
+//                       : 'hover:text-accent'
+//                   }`}
+//                 >
+//                   {name}
+//                 </Link>
+//               </li>
+//             ))}
+//           </ul>
+
+//           {/* Mobile Menu Toggle */}
+//           <div className="md:hidden z-50">
+//             <button
+//               onClick={() => setMenuOpen(!menuOpen)}
+//               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+//               className="p-2 focus:outline-none"
+//             >
+//               {menuOpen ? (
+//                 <XMarkIcon className="h-8 w-8 text-lightText" />
+//               ) : (
+//                 <div className="flex flex-col gap-1">
+//                   <span className="w-6 h-0.5 bg-lightText rounded-sm" />
+//                   <span className="w-6 h-0.5 bg-lightText rounded-sm" />
+//                   <span className="w-6 h-0.5 bg-lightText rounded-sm" />
+//                 </div>
+//               )}
+//             </button>
+//           </div>
+//         </div>
+//       </nav>
+
+//       {/* Mobile Fullscreen Slide Menu */}
+//       <AnimatePresence>
+//         {menuOpen && (
+//           <motion.div
+//             initial={{ y: '-100%' }}
+//             animate={{ y: 0 }}
+//             exit={{ y: '-100%' }}
+//             transition={{ duration: 0.3, ease: 'easeInOut' }}
+//             className="fixed top-0 left-0 w-full h-screen bg-primary text-lightText z-40 flex flex-col items-center justify-center gap-8 text-lg font-medium"
+//           >
+//             {links.map((name) => (
+//               <Link
+//                 key={name}
+//                 to={name.toLowerCase()}
+//                 smooth={false}
+//                 duration={0}
+//                 offset={-80}
+//                 onClick={() => setMenuOpen(false)}
+//                 className={`${
+//                   activeSection === name.toLowerCase() ? 'text-accent underline underline-offset-4' : ''
+//                 } hover:text-secondary transition duration-200`}
 //               >
 //                 {name}
 //               </Link>
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-//     </nav>
-//   )
-// }
+//             ))}
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//     </>
+//   );
+// };
 
-// export default Navbar
+// export default Navbar;
+import { useState, useEffect } from 'react';
+import { Link } from 'react-scroll';
+import { motion, AnimatePresence } from 'framer-motion';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
-import { useState } from 'react'
-import { Link } from 'react-scroll'
-import { motion, AnimatePresence } from 'framer-motion'
-import { XMarkIcon } from '@heroicons/react/24/outline'
-import {
-  FiHome,
-  FiUser,
-  FiBriefcase,
-  FiFolder,
-  FiMail,
-} from 'react-icons/fi'
-
-const links = [
-  { name: 'Home', to: 'home', icon: <FiHome size={20} /> },
-  { name: 'About', to: 'about', icon: <FiUser size={20} /> },
-  { name: 'Experience', to: 'experience', icon: <FiBriefcase size={20} /> },
-  { name: 'Projects', to: 'projects', icon: <FiFolder size={20} /> },
-  { name: 'Contact', to: 'contact', icon: <FiMail size={20} /> },
-]
+const links = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+  const [scrollPercent, setScrollPercent] = useState(0);
+
+  // Scroll percent tracker
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const winHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = (scrollTop / winHeight) * 100;
+      setScrollPercent(scrolled);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Scroll spy
+  useEffect(() => {
+    const handleScrollSpy = () => {
+      const scrollPosition = window.scrollY + 100;
+      const sectionIds = links.map((l) => l.toLowerCase());
+
+      for (let id of sectionIds) {
+        const section = document.getElementById(id);
+        if (
+          section &&
+          section.offsetTop <= scrollPosition &&
+          section.offsetTop + section.offsetHeight > scrollPosition
+        ) {
+          setActiveSection(id);
+          break;
+        }
+      }
+    };
+    window.addEventListener('scroll', handleScrollSpy);
+    return () => window.removeEventListener('scroll', handleScrollSpy);
+  }, []);
 
   return (
     <>
-      <nav className="fixed w-full top-0 z-50 flex items-center justify-between px-6 py-4 bg-transparent backdrop-blur-sm">
-        <h1 className="text-2xl font-bold text-secondary">Malay Virpariya</h1>
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md shadow-md">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <h1 className="text-lg sm:text-2xl font-semibold text-secondary">Malay Virpariya</h1>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-10 text-lightText">
-          {links.map(({ name, to, icon }) => (
-            <li key={name}>
-              <Link
-                to={to}
-                smooth={true}
-                duration={500}
-                offset={-80}
-                className="flex items-center gap-2 cursor-pointer hover:text-accent transition-colors duration-300 transform hover:scale-105"
-              >
-                <span className="text-secondary">{icon}</span>
-                <span className="font-medium">{name}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+          {/* Desktop Nav */}
+          <ul className="hidden md:flex items-center gap-8 text-lightText text-sm sm:text-base">
+            {links.map((name) => (
+              <li key={name}>
+                <Link
+                  to={name.toLowerCase()}
+                  smooth={false}
+                  duration={0}
+                  offset={-80}
+                  className={`cursor-pointer transition duration-300 font-medium ${
+                    activeSection === name.toLowerCase()
+                      ? 'text-accent underline underline-offset-4'
+                      : 'hover:text-accent'
+                  }`}
+                >
+                  {name}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-        {/* Mobile 9-dot button */}
-        <button
-          onClick={() => setMenuOpen(true)}
-          className="z-50 flex flex-col gap-1.5 w-8 h-8 justify-center items-center md:hidden"
-          aria-label="Open menu"
-        >
-          {[...Array(3)].map((_, row) => (
-            <div key={row} className="flex gap-1.5">
-              {[...Array(3)].map((_, col) => (
-                <span
-                  key={col}
-                  className="w-1.5 h-1.5 bg-lightText rounded-full"
+          {/* Right Side (Progress + Hamburger) */}
+          <div className="flex items-center gap-4 md:gap-6">
+            {/* Scroll Progress Circle */}
+            <div className="relative w-10 h-10">
+              <svg className="absolute top-0 left-0" width="40" height="40">
+                <circle
+                  cx="20"
+                  cy="20"
+                  r="16"
+                  stroke="#7c3aed"
+                  strokeWidth="4"
+                  fill="none"
+                  strokeDasharray={100}
+                  strokeDashoffset={100 - scrollPercent}
+                  strokeLinecap="round"
                 />
-              ))}
+              </svg>
+              <div className="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-secondary">
+                {Math.round(scrollPercent)}%
+              </div>
             </div>
-          ))}
-        </button>
+
+            {/* Hamburger */}
+            <div className="md:hidden z-50">
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                className="p-2 focus:outline-none"
+              >
+                {menuOpen ? (
+                  <XMarkIcon className="h-8 w-8 text-lightText" />
+                ) : (
+                  <div className="flex flex-col gap-1">
+                    <span className="w-6 h-0.5 bg-lightText rounded-sm" />
+                    <span className="w-6 h-0.5 bg-lightText rounded-sm" />
+                    <span className="w-6 h-0.5 bg-lightText rounded-sm" />
+                  </div>
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
       </nav>
 
-      {/* Mobile fullscreen grid menu */}
+      {/* Mobile Slide Menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-primary px-6 flex items-center justify-center"
+            initial={{ y: '-100%' }}
+            animate={{ y: 0 }}
+            exit={{ y: '-100%' }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="fixed top-0 left-0 w-full h-screen bg-primary text-lightText z-40 flex flex-col items-center justify-center gap-8 text-lg font-medium"
           >
-            <button
-              onClick={() => setMenuOpen(false)}
-              className="absolute top-6 right-6 text-lightText"
-              aria-label="Close menu"
-            >
-              <XMarkIcon className="h-8 w-8" />
-            </button>
-
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              variants={{
-                hidden: {},
-                visible: {
-                  transition: { staggerChildren: 0.08, delayChildren: 0.2 },
-                },
-              }}
-              className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-10"
-            >
-              {links.map(({ name, to, icon }) => (
-                <motion.div
-                  key={name}
-                  variants={{
-                    hidden: { opacity: 0, scale: 0.9 },
-                    visible: { opacity: 1, scale: 1 },
-                    exit: { opacity: 0, scale: 0.9 },
-                  }}
-                  whileHover={{ scale: 1.08 }}
-                  className="bg-tertiary hover:shadow-xl hover:shadow-accent/30 transition-all duration-300 rounded-2xl p-6 flex flex-col items-center justify-center text-lightText cursor-pointer"
-                >
-                  <Link
-                    to={to}
-                    smooth={true}
-                    duration={500}
-                    offset={-80}
-                    onClick={() => setMenuOpen(false)}
-                    className="flex flex-col items-center gap-3 text-center"
-                  >
-                    <span className="text-secondary">{icon}</span>
-                    <span className="text-lg font-medium hover:text-accent transition-colors">
-                      {name}
-                    </span>
-                  </Link>
-                </motion.div>
-              ))}
-            </motion.div>
+            {links.map((name) => (
+              <Link
+                key={name}
+                to={name.toLowerCase()}
+                smooth={false}
+                duration={0}
+                offset={-80}
+                onClick={() => setMenuOpen(false)}
+                className={`${
+                  activeSection === name.toLowerCase()
+                    ? 'text-accent underline underline-offset-4'
+                    : ''
+                } hover:text-secondary transition duration-200`}
+              >
+                {name}
+              </Link>
+            ))}
           </motion.div>
         )}
       </AnimatePresence>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

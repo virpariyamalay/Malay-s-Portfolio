@@ -13,6 +13,11 @@ export default {
         tertiary: "#112240",
         lightText: "#ccd6f6",
         lightestText: "#8892b0",
+          accent: '#00D9A5',
+      accentDark: '#00B48F',
+      darkPrimary: '#0A192F',
+      darkSecondary: '#112240',
+      lightText: '#EDEDED',
         
       },
       animation: {
