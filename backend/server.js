@@ -36,5 +36,9 @@ app.post('/api/contact', async (req, res) => {
     }
 });
 
+app.use("/health", (req, res) => {
+    res.status(200).json({ message: "Server is healthy" });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`)); 
