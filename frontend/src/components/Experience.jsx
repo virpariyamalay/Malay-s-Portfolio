@@ -145,8 +145,8 @@ const techIcons = {
 const educationData = [
   {
     title: "Dharmsinh Desai University",
-    degree: "B.Tech (IT) - CGPA: 7.15",
-    duration: "07 2023 - 05 2026",
+    degree: "B.Tech (IT) - CGPA: 7.3",
+    duration: "07 2022 - 05 2026",
     location: "Nadiad, India",
     icon: <FaUniversity className="text-white" />
   },
