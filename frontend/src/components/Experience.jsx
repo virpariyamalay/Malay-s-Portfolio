@@ -162,7 +162,7 @@ const educationData = [
 const skills = [
   { category: "Languages", items: ["C", "C++", "JavaScript", "SQL", "NoSQL"] },
   { category: "Developer Tools", items: ["VS Code", "Android Studio", "IntelliJ IDEA Ultimate"] },
-  { category: "Technologies/Frameworks", items: ["GitHub", "ReactJS", "Redux", "NodeJS", "ExpressJS", "Git", "MongoDB", "Supabase"] }
+  { category: "Technologies/Frameworks", items: ["GitHub", "ReactJS", "NodeJS", "ExpressJS", "Git", "MongoDB"] }
 ];
 
 const Experience = () => {
