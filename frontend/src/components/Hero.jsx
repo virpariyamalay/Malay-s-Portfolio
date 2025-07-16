@@ -275,7 +275,7 @@ const Hero = () => {
               className="w-36 h-36 sm:w-52 sm:h-52 rounded-full overflow-hidden ring-4 ring-secondary"
             >
               <img
-                src="/circleprofile.jpg"
+                src="/profile.jpg"
                 alt="Malay Virpariya"
                 className="w-full h-full object-cover"
               />
